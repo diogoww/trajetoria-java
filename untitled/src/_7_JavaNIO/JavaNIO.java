@@ -1,4 +1,4 @@
-package _7_JavaNIO.LeituraEscrita;
+package _7_JavaNIO;
 
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
