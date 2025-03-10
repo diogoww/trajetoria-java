@@ -1,4 +1,4 @@
-package JavaCollections.ArrayseColecoes;
+package JavaCollections.ArrayseColecoes.Listas;
 
 import java.util.ArrayList;
 import java.util.List;
