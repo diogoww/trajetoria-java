@@ -8,7 +8,7 @@ public class SistemaCadastro {
         if (cadastro!=null){
             System.out.println(cadastro.getId() + " " + cadastro.getNome());
         } else {
-            System.out.println("nao foi possivel localizar um cadastro pelo ID");
+            System.out.println("nao foi possivel localizar um cadastro pelo ID"); 
         }
     }
 }
