@@ -3,9 +3,10 @@ public class SistemaCadastro {
         FabricaConexao.conectar();
         CadastroRepository repository = new CadastroRepository();
         Cadastro cadastro = new Cadastro();
-        cadastro.setNome("Lionel Messi da Silva");
-        cadastro.setIdade(32);
+        cadastro.setNome("Lionel Messi");
+        cadastro.setIdade(99);
+        cadastro.setId(4);
 
-        repository.salvar(cadastro);
+        repository.excluir(4);
     }
 }

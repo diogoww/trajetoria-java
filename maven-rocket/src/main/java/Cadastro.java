@@ -1,6 +1,15 @@
 public class Cadastro {
+    private Integer id;
     private String nome;
     private Integer idade;
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public Integer getId() {
+        return id;
+    }
 
     public String getNome() {
         return nome;
