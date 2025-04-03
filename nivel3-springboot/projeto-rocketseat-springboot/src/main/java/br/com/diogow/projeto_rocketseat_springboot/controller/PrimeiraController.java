@@ -1,8 +1,11 @@
 package br.com.diogow.projeto_rocketseat_springboot.controller;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
+import java.util.Objects;
 
 @RestController
 @RequestMapping("/primeiraController")
@@ -35,6 +38,16 @@ public class PrimeiraController {
     @PostMapping("/metodoComListHeaders")
     public String metodoComListHeaders(@RequestHeader Map<String, String> headers){
         return  "metodoComListHeaders " + headers.entrySet();
+    }
+
+    @GetMapping("/metodoResponseEntity/{id}")
+    public ResponseEntity<Object> metodoResponseEntity (@PathVariable Long id){
+        var usuario = new Usuario("diogow");
+
+        if(id>5){
+            return ResponseEntity.status(HttpStatus.OK).body(usuario);
+        }
+        return ResponseEntity.badRequest().body("NUMERO MENOR QUE 5");
     }
 
     record Usuario(String username){}
