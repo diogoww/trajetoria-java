@@ -22,9 +22,19 @@ public class PrimeiraController {
         return "o parametro com metodoComQueryParams2 eh " + allParms.entrySet();
     }
 
-    @PostMapping("metodoComBodyParams")
+    @PostMapping("/metodoComBodyParams")
     public String metodoComBodyParams(@RequestBody Usuario usuario){
         return  "metodoComBodyParams " + usuario.username();
+    }
+
+    @PostMapping("/metodoComHeaders")
+    public String metodoComHeaders(@RequestHeader("name") String name){
+        return  "metodoComHeaders " + name;
+    }
+
+    @PostMapping("/metodoComListHeaders")
+    public String metodoComListHeaders(@RequestHeader Map<String, String> headers){
+        return  "metodoComListHeaders " + headers.entrySet();
     }
 
     record Usuario(String username){}
