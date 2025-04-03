@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>br.com.diogow</groupId>
 	<artifactId>projeto-rocketseat-springboot</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<name>projeto rocketseat springboot</name>
 	<description>Projeto de Springboot para a trajetoria JAVA da Rocketseat</description>
 	<url/>
