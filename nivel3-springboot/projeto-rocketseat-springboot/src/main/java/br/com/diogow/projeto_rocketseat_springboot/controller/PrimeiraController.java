@@ -16,8 +16,16 @@ public class PrimeiraController {
     public String metodoComQueryParams(@RequestParam String id){
         return "o parametro com metodoComQueryParams eh " + id;
     }
+
     @GetMapping("/metodoComQueryParams2")
     public String metodoComQueryParams2(@RequestParam Map<String, String> allParms){
         return "o parametro com metodoComQueryParams2 eh " + allParms.entrySet();
     }
+
+    @PostMapping("metodoComBodyParams")
+    public String metodoComBodyParams(@RequestBody Usuario usuario){
+        return  "metodoComBodyParams " + usuario.username();
+    }
+
+    record Usuario(String username){}
 }
