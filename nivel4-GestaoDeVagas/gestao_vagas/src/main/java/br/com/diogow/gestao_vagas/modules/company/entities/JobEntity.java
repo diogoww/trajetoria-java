@@ -1,9 +1,6 @@
 package br.com.diogow.gestao_vagas.modules.company.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
 
@@ -21,6 +18,11 @@ public class JobEntity {
     private String benefits;
     private String level;
 
+    @ManyToOne()
+    @JoinColumn(name = "company_id", insertable = false, updatable = false)
+    private CompanyEntity companyEntity;
+
+    @Column(name = "company_id")
     private UUID companyId;
 
     @CreationTimestamp
