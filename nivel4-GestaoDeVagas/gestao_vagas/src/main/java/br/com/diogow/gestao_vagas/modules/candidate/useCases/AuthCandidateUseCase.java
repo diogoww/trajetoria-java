@@ -48,7 +48,7 @@ public class AuthCandidateUseCase {
                 .withSubject(candidate.getId().toString())
                 .withClaim("roles", Arrays.asList("candidate"))
                 .withExpiresAt(Instant.now().plus(Duration.ofMinutes(10)))
-                .sign(algorithm);
+                .sign(algorithm); 
 
         var authCandidateResponse = AuthCandidateResponseDTO.builder()
                 .acess_token(token)
