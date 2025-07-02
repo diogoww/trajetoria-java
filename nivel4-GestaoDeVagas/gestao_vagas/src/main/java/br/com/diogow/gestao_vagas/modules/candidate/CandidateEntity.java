@@ -47,7 +47,7 @@ public class CandidateEntity {
         this.name = name;
     }
 
-    public UUID getId() {
+    public String getId() {
         return id;
     }
 
