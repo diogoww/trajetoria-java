@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/IFRS - Java.iml" filepath="$PROJECT_DIR$/.idea/IFRS - Java.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Java II/Java II.iml" filepath="$PROJECT_DIR$/Java II/Java II.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Java I/aula_3.6/aula_3.6.iml" filepath="$PROJECT_DIR$/Java I/aula_3.6/aula_3.6.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Java I/aula_5.1/aula_5.1.iml" filepath="$PROJECT_DIR$/Java I/aula_5.1/aula_5.1.iml" />
+    </modules>
+  </component>
+</project>
