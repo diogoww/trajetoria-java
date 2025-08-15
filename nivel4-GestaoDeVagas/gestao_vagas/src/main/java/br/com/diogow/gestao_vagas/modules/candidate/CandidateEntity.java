@@ -1,5 +1,6 @@
 package br.com.diogow.gestao_vagas.modules.candidate;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -22,77 +23,26 @@ public class CandidateEntity {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
+    @Schema(example = "Diogo Varaschin", requiredMode = Schema.RequiredMode.REQUIRED, description = "Nome do candidato.")
     private String name;
 
-    @NotBlank
+    @NotBlank()
     @Pattern(regexp = "\\S+", message = "o campo [username] não deve conter espaços")
+    @Schema(example = "diogow", requiredMode = Schema.RequiredMode.REQUIRED, description = "Username do candidato.")
     private String username;
 
     @Email(message = "o campo [email] deve conter um email valido!")
+    @Schema(example = "diogow@dev.com.br", requiredMode = Schema.RequiredMode.REQUIRED, description = "Email do candidato.")
     private String email;
 
     @Length(min = 8, max = 100, message = "a senha deve conter entre (8) e (100) caracteres")
+    @Schema(example = "diogow@123", minLength = 8, maxLength = 100, requiredMode = Schema.RequiredMode.REQUIRED, description = "Senha do candidato.")
     private String password;
+
+    @Schema(example = "Desenvolvedor JAVA Jr.", requiredMode = Schema.RequiredMode.REQUIRED, description = "Breve descrisção do candidato.")
     private String description;
     private String curriculum;
 
     @CreationTimestamp
     private LocalDateTime createdAt;
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public UUID getId() {
-        return id;
-    }
-
-    public void setId(UUID id) {
-        this.id = id;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public String getCurriculum() {
-        return curriculum;
-    }
-
-    public void setCurriculum(String curriculum) {
-        this.curriculum = curriculum;
-    }
-
 }
