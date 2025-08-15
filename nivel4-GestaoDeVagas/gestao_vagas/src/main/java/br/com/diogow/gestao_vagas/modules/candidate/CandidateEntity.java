@@ -12,6 +12,7 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.validator.constraints.Length;
 
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 @Data
 @Entity(name = "candidate")
@@ -19,7 +20,7 @@ public class CandidateEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private String id;
+    private UUID id;
 
     private String name;
 
@@ -46,11 +47,11 @@ public class CandidateEntity {
         this.name = name;
     }
 
-    public String getId() {
+    public UUID getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(UUID id) {
         this.id = id;
     }
 

@@ -3,6 +3,7 @@ package br.com.diogow.gestao_vagas.modules.candidate.controllers;
 import br.com.diogow.gestao_vagas.exceptions.UserFoundException;
 import br.com.diogow.gestao_vagas.modules.candidate.CandidateEntity;
 import br.com.diogow.gestao_vagas.modules.candidate.CandidateRepository;
+import br.com.diogow.gestao_vagas.modules.candidate.dto.ProfileCandidateResponseDTO;
 import br.com.diogow.gestao_vagas.modules.candidate.useCases.CreateCandidateUseCase;
 import br.com.diogow.gestao_vagas.modules.candidate.useCases.ListAllJobsByFilterUseCase;
 import br.com.diogow.gestao_vagas.modules.candidate.useCases.ProfileCandidateUseCase;
@@ -50,6 +51,15 @@ public class CandidateController {
 
     @GetMapping("/")
     @PreAuthorize("hasRole('CANDIDATE')")
+    @Tag(name = "Candidato", description = "Informações do candidato.")
+    @Operation(summary = "Perfil do candidato", description = "Essa função é responsavel por buscar as informações do perfil do candidato.")
+    @SecurityRequirement(name = "jwt_auth")
+    @ApiResponses({
+            @ApiResponse(responseCode = "200", content = {
+                    @Content(schema = @Schema(implementation = ProfileCandidateResponseDTO.class))
+            }),
+            @ApiResponse(responseCode = "400", description = "user not found")
+    })
     public ResponseEntity<Object> get(HttpServletRequest request) {
 
         var idCandidate = request.getAttribute("candidate_id");
